@@ -1,20 +1,52 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+
+//pages
+const Home = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/Home.vue");
+const EventCreate = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
+const EventList = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
+const EventShow = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventShow.vue");
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
+    meta: {
+      title: "Home page",
+      layout: "",
+    },
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/",
+    name: "event-list",
+    component: EventList,
+    meta: {
+      title: "EventList",
+      layout: "",
+    },
+  },
+  {
+    path: "/event/create",
+    name: "event-create",
+    component: EventCreate,
+    meta: {
+      title: "EventCreate",
+      layout: "",
+    },
+  },
+  {
+    path: "/event/:id",
+    name: "event-show",
+    component: EventShow,
+    props: true,
+    meta: {
+      title: "EventShow",
+      layout: "",
+    },
   },
 ];
 
