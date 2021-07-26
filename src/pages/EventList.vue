@@ -35,15 +35,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.wrapper {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px;
-  h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
