@@ -47,12 +47,15 @@ export default {
   margin: auto;
   padding: 15px;
 }
+
 .event-header {
   background-color: aquamarine;
 }
+
 p {
   font-size: 14px;
 }
+
 h2 {
   font-size: 24px;
 }

@@ -18,9 +18,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home{
-    max-width: 1200px;
-    width: 100%;
-    margin: auto;
-  }
+.home {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
 </style>

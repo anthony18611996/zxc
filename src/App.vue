@@ -21,7 +21,7 @@ export default {
 
 .wrapper {
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
   padding: 15px;
   h1 {
     font-size: 32px;

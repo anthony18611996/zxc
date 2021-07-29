@@ -3,12 +3,9 @@
 </template>
 
 <script>
-
 export default {
   name: "HelloWorld",
-  components: {
-
-  },
+  components: {},
   props: {
     msg: String,
   },

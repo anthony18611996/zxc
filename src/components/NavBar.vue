@@ -17,5 +17,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  a {
+    font-size: 18px;
+    color: #42b983;
+    &.router-link-active {
+      border-bottom: 1px solid #42b983;
+    }
+  }
 }
 </style>
