@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import EventService from "@/services/EventService.js";
+import { getPostById } from "../api/posts";
 
 export default {
   name: "EventShow",
@@ -30,9 +30,9 @@ export default {
     };
   },
   created() {
-    EventService.getEvent(this.id)
-      .then((response) => {
-        this.event = response.data;
+    getPostById(this.id)
+      .then(({ data }) => {
+        this.event = data;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);

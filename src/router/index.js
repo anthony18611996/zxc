@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+//middlewares
+import auth from "../middlewares/auth";
+
 //pages
 const Home = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/Home.vue");
@@ -9,6 +12,8 @@ const EventList = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
 const EventShow = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventShow.vue");
+const Game = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/GamePage.vue");
 
 const routes = [
   {
@@ -17,7 +22,6 @@ const routes = [
     component: Home,
     meta: {
       title: "Home page",
-      layout: "",
     },
   },
   {
@@ -26,7 +30,6 @@ const routes = [
     component: EventList,
     meta: {
       title: "EventList",
-      layout: "",
     },
   },
   {
@@ -35,7 +38,8 @@ const routes = [
     component: EventCreate,
     meta: {
       title: "EventCreate",
-      layout: "",
+      layout: "profile",
+      middlewares: [auth],
     },
   },
   {
@@ -45,7 +49,15 @@ const routes = [
     props: true,
     meta: {
       title: "EventShow",
-      layout: "",
+    },
+  },
+  {
+    path: "/game",
+    name: "game",
+    component: Game,
+    props: true,
+    meta: {
+      title: "Game",
     },
   },
 ];
@@ -53,6 +65,22 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+
+  if (to.meta.middlewares) {
+    let canGoNext = true;
+    to.meta.middlewares.forEach((middleware) => {
+      if (!canGoNext) return;
+      const isValid = middleware(router);
+      if (!isValid) canGoNext = false;
+    });
+    if (canGoNext) return next();
+  } else {
+    return next();
+  }
 });
 
 export default router;

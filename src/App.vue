@@ -1,28 +1,24 @@
 <template>
-  <NavBar />
-  <transition name="slide-fade" mode="out-in">
-    <router-view />
-  </transition>
+  <Layout />
 </template>
 
 <script>
-import NavBar from "./components/NavBar";
+import Layout from "./layouts/Layout";
 
 export default {
   name: "App",
   components: {
-    NavBar,
+    Layout,
   },
 };
 </script>
 
 <style lang="scss">
-@import "./assets/styles/style.scss";
-
 .wrapper {
   max-width: 1200px;
   margin: 20px auto;
   padding: 15px;
+
   h1 {
     font-size: 32px;
     margin-bottom: 15px;

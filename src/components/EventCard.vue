@@ -38,13 +38,16 @@ export default {
     border: 2px solid transparent;
   }
   span {
-    color: red;
+    color: $black;
     margin-bottom: 15px;
   }
   h4 {
     font-size: 20px;
     color: #000;
     margin-bottom: 15px;
+    @include media_tablet {
+      font-size: 36px;
+    }
   }
 }
 </style>

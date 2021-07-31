@@ -11,7 +11,7 @@
 
 <script>
 import EventCard from "../components/EventCard";
-import EventService from "@/services/EventService.js";
+import { getPosts } from "../api/posts";
 
 export default {
   name: "EventList",
@@ -24,9 +24,9 @@ export default {
     };
   },
   created() {
-    EventService.getEvents()
-      .then((response) => {
-        this.events = response.data;
+    getPosts()
+      .then(({ data }) => {
+        this.events = data;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);
