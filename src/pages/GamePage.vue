@@ -6,16 +6,20 @@
     :level-now="currentLevel"
     v-if="levels.length && !loading"
   />
-  <div v-else>Загрузка ...</div>
+  <div v-else>
+    <Loader />
+  </div>
 </template>
 
 <script>
 import Game from "../components/Game";
+import Loader from "../components/Loader";
 
 export default {
   name: "GamePage",
   components: {
     Game,
+    Loader,
   },
   data() {
     return {
