@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss">
-.wrapper {
+div.wrapper {
   max-width: 1200px;
   margin: 20px auto;
   padding: 15px;

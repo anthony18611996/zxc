@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    {{ levelNow }}
+    <div class="game-description">
+      <p>Ваша задача запомнить и открыть правильные ячейки</p>
+    </div>
     <div class="polygon">
       <div
         class="box"
@@ -13,6 +15,9 @@
         }"
         @click="select(index)"
       ></div>
+    </div>
+    <div class="level">
+      <h4>Уровень : {{ levelNow }}</h4>
     </div>
   </div>
 </template>
@@ -106,24 +111,40 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
   width: 600px;
-
+  margin-bottom: 50px;
+  background-color: #ebebeb;
   .box {
     width: calc(100% / 5);
-    border: 1px solid $black;
-    background-color: $white;
+    //border: 1px solid $black;
+    background-color: #ccc;
     height: 100px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+    transform-style: preserve-3d;
     &.is-right {
-      background-color: blue;
-    }
-
-    &.not-active {
       background-color: #42b983;
+    }
+    &.not-active {
+      background-color: #ccc;
     }
 
     &.selected {
-      background-color: red;
+      background-color: #42b983;
+      transform: rotateX(180deg);
     }
   }
+}
+.level {
+  h4 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+.game-description {
+  margin-bottom: 20px;
 }
 </style>

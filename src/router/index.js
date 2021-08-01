@@ -18,7 +18,7 @@ const Game = () =>
 const routes = [
   {
     path: "/home",
-    name: "Home",
+    name: "home",
     component: Home,
     meta: {
       title: "Home page",

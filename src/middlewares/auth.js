@@ -3,7 +3,7 @@ export default function auth(router) {
   if (isAuth) {
     return true;
   } else {
-    router.push({ name: "Home" });
+    router.push({ name: "home" });
     return false;
   }
 }

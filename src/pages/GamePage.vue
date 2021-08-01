@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Game from "./Game";
+import Game from "../components/Game";
 
 export default {
   name: "GamePage",
@@ -40,8 +40,8 @@ export default {
       this.loading = true;
       for (let i = 0; i < 25; i++) {
         const level = {
-          boxCount: this.random(9, 30),
-          rightBoxesCount: this.random(1, 5),
+          boxCount: this.random(9, 25),
+          rightBoxesCount: this.random(3, 9),
           timeToHide: this.random(500, 3000),
         };
         this.levels.push(level);
