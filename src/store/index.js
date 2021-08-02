@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import modules from "./modules";
 
 export default createStore({
   state: {
@@ -28,7 +29,6 @@ export default createStore({
   },
   mutations: {},
   actions: {},
-  modules: {},
   getters: {
     catLength: (state) => {
       return state.categories.length;
@@ -43,4 +43,5 @@ export default createStore({
       return state.events.find((event) => event.id === id);
     },
   },
+  modules,
 });

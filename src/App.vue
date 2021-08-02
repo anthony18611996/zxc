@@ -10,6 +10,9 @@ export default {
   components: {
     Layout,
   },
+  mounted() {
+    console.log(this.$store.state.posts.post);
+  },
 };
 </script>
 
