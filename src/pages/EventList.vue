@@ -1,38 +1,33 @@
 <template>
-  <div class="wrapper">
-    <h1>Event Listing</h1>
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      :event="event"
-    ></EventCard>
-  </div>
+  <section id="work" class="work">
+    <div class="work__wrapper">
+      <WorkSlider />
+    </div>
+  </section>
 </template>
 
 <script>
-import EventCard from "../components/EventCard";
-import { getPosts } from "../api/posts";
+import WorkSlider from "./components/WorkSlider";
 
 export default {
   name: "EventList",
   components: {
-    EventCard,
+    WorkSlider,
   },
   data() {
-    return {
-      events: [],
-    };
-  },
-  created() {
-    getPosts()
-      .then(({ data }) => {
-        this.events = data;
-      })
-      .catch((error) => {
-        console.log("There was an error:", error.response);
-      });
+    return {};
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.work {
+  max-width: 1160px;
+  padding: 0 15px 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  &__wrapper {
+    margin: 0 -15px 0 -15px;
+  }
+}
+</style>

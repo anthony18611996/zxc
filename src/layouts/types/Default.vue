@@ -1,5 +1,5 @@
 <template>
-  <NavBar />
+  <Header />
   <router-view v-slot="{ Component }">
     <transition name="slide-fade" mode="out-in">
       <component :is="Component" />
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import NavBar from "../../components/NavBar";
+import Header from "../../components/includes/header/Header";
 
 export default {
   name: "Default",
   components: {
-    NavBar,
+    Header,
   },
 };
 </script>
