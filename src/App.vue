@@ -3,15 +3,13 @@
 </template>
 
 <script>
+import "./assets/js/scroll.js";
 import Layout from "./layouts/Layout";
 
 export default {
   name: "App",
   components: {
     Layout,
-  },
-  mounted() {
-    console.log(this.$store.state.posts.post);
   },
 };
 </script>

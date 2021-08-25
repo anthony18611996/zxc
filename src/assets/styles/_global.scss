@@ -108,6 +108,16 @@ span {
   opacity: $listOpacity;
 }
 
+.section__name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: $subBlack;
+}
+
 // routes transition animation
 .fade-enter-active {
   transition: opacity 0.8s;
