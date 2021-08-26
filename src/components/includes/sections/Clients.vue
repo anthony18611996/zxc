@@ -2,7 +2,13 @@
   <section id="clients" class="clients">
     <div class="container">
       <div class="row clients__content">
-        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-12">
+        <div
+          class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-12"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-sine"
+        >
           <h2>{{ title }}</h2>
         </div>
         <div
@@ -17,13 +23,23 @@
             offset-sm-1
             col-12
           "
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-duration="800"
+          data-aos-easing="ease-in-sine"
         >
           <p class="clients__subtitle">{{ subtitle }}</p>
           <p>{{ description }}</p>
         </div>
       </div>
       <div class="row">
-        <div class="d-flex justify-content-between align-items-center">
+        <div
+          class="d-flex justify-content-between align-items-center"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-duration="1100"
+          data-aos-easing="ease-in-sine"
+        >
           <Mi />
           <Tinder />
           <Apple />

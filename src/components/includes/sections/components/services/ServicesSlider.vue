@@ -22,32 +22,68 @@
     class="mySwiper services__swiper"
   >
     <swiper-slide>
-      <video
-        src="https://biokonturkids.ru/wp-content/themes/bio/bio.mp4"
-        controls="controls"
-        poster="https://biokonturkids.ru/wp-content/themes/bio/img/bioPrev.jpg"
-      ></video>
+      <video controls="controls">
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.ogv"
+          type="video/ogv"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.webm"
+          type="video/webm"
+        />
+      </video>
     </swiper-slide>
     <swiper-slide>
-      <video
-        src="https://biokonturkids.ru/wp-content/themes/bio/bio.mp4"
-        controls="controls"
-        poster="https://biokonturkids.ru/wp-content/themes/bio/img/bioPrev.jpg"
-      ></video>
+      <video controls="controls">
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.ogv"
+          type="video/ogv"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.webm"
+          type="video/webm"
+        />
+      </video>
     </swiper-slide>
     <swiper-slide>
-      <video
-        src="https://biokonturkids.ru/wp-content/themes/bio/bio.mp4"
-        controls="controls"
-        poster="https://biokonturkids.ru/wp-content/themes/bio/img/bioPrev.jpg"
-      ></video>
+      <video controls="controls">
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.ogv"
+          type="video/ogv"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.webm"
+          type="video/webm"
+        />
+      </video>
     </swiper-slide>
     <swiper-slide>
-      <video
-        src="https://biokonturkids.ru/wp-content/themes/bio/bio.mp4"
-        controls="controls"
-        poster="https://biokonturkids.ru/wp-content/themes/bio/img/bioPrev.jpg"
-      ></video>
+      <video controls="controls">
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.ogv"
+          type="video/ogv"
+        />
+        <source
+          src="//denis-creative.com/wp-content/uploads/2018/01/video.webm"
+          type="video/webm"
+        />
+      </video>
     </swiper-slide>
   </swiper>
 </template>

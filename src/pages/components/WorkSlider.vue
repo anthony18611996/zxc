@@ -8,14 +8,24 @@
     :pagination="{
       type: 'progressbar',
     }"
+    data-aos="fade-left"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine"
+    data-aos-duration="1500"
   >
     <swiper-slide v-for="slide in slidesList" :key="slide.id">
       <div class="work__slide d-flex">
         <div class="work__text">
           <h1>{{ slide.title }}</h1>
           <p>{{ slide.desc }}</p>
-          <BaseButton :text="'get started'" @click="this.$on('openW', this.openWindow)" />
-        </div>s
+          <BaseButton
+            :text="'get started'"
+            @click="
+              window = true;
+              ddd();
+            "
+          />
+        </div>
         <div class="work__image text-end">
           <img
             class="work__main-image"
@@ -29,14 +39,15 @@
                 src="@/assets/images/videobg.jpg"
                 alt=""
               />
-              <PlayButton />
+              <PlayButton @click="video = true" />
             </div>
           </div>
         </div>
       </div>
     </swiper-slide>
   </swiper>
-  <ModalWindow v-if="window" />
+  <ModalWindow v-show="window" @close="window = false" />
+  <VideoWindow v-if="video" @close="video = false" />
 </template>
 
 <script>
@@ -45,7 +56,8 @@ import SwiperCore, { Autoplay, Pagination } from "swiper";
 import "swiper/components/pagination/pagination.min.css";
 
 import PlayButton from "../../components/form-elements/PlayButton";
-import ModalWindow from "@/components/ModalWindow";
+import ModalWindow from "@/components/modals/ModalWindow";
+import VideoWindow from "@/components/modals/VideoWindow";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -56,6 +68,7 @@ export default {
     SwiperSlide,
     PlayButton,
     ModalWindow,
+    VideoWindow,
   },
   data() {
     return {
@@ -79,6 +92,9 @@ export default {
           image: "Placeholder.jpg",
         },
       ],
+      window: false,
+      video: false,
+      body: document.body,
     };
   },
   mounted() {
@@ -87,18 +103,28 @@ export default {
       ".work__swiper .swiper-pagination-progressbar-fill"
     );
   },
+  computed: {
+    eee() {
+      return this.window;
+    },
+  },
   methods: {
     paginationStyles(pagination, fill) {
       const _pagination = document.querySelector(pagination);
       const _fill = document.querySelector(fill);
-      const _ddd = document.querySelector(".work__text");
-      let x = window.innerWidth - _ddd.offsetWidth * 4;
       _pagination.style.width = 278 + "px";
       _pagination.style.height = 2 + "px";
       _pagination.style.bottom = 16.33 + "%";
       _pagination.style.top = "unset";
-      _pagination.style.left = x + "px";
       _fill.style.backgroundColor = "black";
+      if(window.innerWidth < 576) {
+        _pagination.style.display = "none"
+      }
+    },
+    ddd() {
+      this.eee === true
+        ? (this.body.style.overflow = "hidden")
+        : (this.body.style.overflow = "");
     },
   },
 };

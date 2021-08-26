@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .services__list {
   padding-left: 67px;
   display: flex;
@@ -52,6 +52,13 @@ export default {
     text-align: left;
     width: 100%;
     margin-bottom: 15px;
+    span {
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        color: $blue;
+      }
+    }
     @include media_lg {
       max-width: 200px;
     }
