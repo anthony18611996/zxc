@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     toggleMenu() {
-      let _buttons = document.querySelectorAll(".header__nav-btn"),
+      let _buttons = document.querySelectorAll(".header .header__nav-btn"),
         _menu = document.querySelector(".header__menu"),
         _links = document.querySelectorAll(".header__menu li");
 
