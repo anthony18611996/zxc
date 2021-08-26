@@ -116,7 +116,9 @@ export default {
       _pagination.style.height = 2 + "px";
       _pagination.style.bottom = 16.33 + "%";
       _pagination.style.top = "unset";
-      _fill.style.backgroundColor = "black";
+      _pagination.style.top = "unset";
+      _fill.style.background = "#C6B393";
+      _fill.style.opacity = 1;
       if(window.innerWidth < 576) {
         _pagination.style.display = "none"
       }
@@ -238,6 +240,7 @@ export default {
   height: 2px;
   bottom: 16.33%;
   top: unset;
-  background-color: black;
+  background-color: #D7D4D4;
+
 }
 </style>

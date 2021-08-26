@@ -29,7 +29,7 @@ const routes = [
     name: "event-list",
     component: EventList,
     meta: {
-      title: "EventList",
+      title: "Gravity",
     },
   },
   {
