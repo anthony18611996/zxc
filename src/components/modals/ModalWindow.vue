@@ -1,18 +1,24 @@
 <template>
   <div id="modal-template">
-    <transition name="slide-fade" mode="out-in">
-      <div class="modal-mask" @click="closeWindow">
-        <div class="modal-wrapper">
-          <form class="contact__form" @submit.prevent="sendForm">
-            <div class="modal-container">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <form class="contact__form" @submit.prevent="sendForm">
+          <div class="modal-container">
+            <div class="modal-body">
               <div
-                class="modal-body"
-                @click="this.$parent.$options.methods.closeWindow()"
+                class="header__nav-btn text-end"
+                @click="
+                  $emit('close');
+                  restoreOverflow();
+                "
               >
-                <div class="modal-title">
-                  <h3>You are welcome to our team</h3>
-                </div>
-                <div class="modal-fields">
+                <span>&#10006;</span>
+              </div>
+              <div class="modal-title">
+                <h3>You are welcome to our team</h3>
+              </div>
+              <div class="modal-fields">
+                <div style="position: relative">
                   <BaseInput
                     type="text"
                     placeholder="Name"
@@ -23,6 +29,8 @@
                   <span class="valid-error" v-if="v$.name.$error">
                     Минимальная длина имени должна составлять 3 символа
                   </span>
+                </div>
+                <div style="position: relative">
                   <BaseInput
                     type="tel"
                     placeholder="Phone"
@@ -34,18 +42,15 @@
                     Введите корректный номер телефона
                   </span>
                 </div>
-                <div class="modal-buttonn">
-                  <BaseButton
-                    text="send"
-                    :disabled="name !== '' && phone !== '' ? null : 'disabled'"
-                  />
-                </div>
+              </div>
+              <div class="modal-buttonn">
+                <BaseButton text="send" />
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -65,30 +70,25 @@ export default {
       name: "",
       phone: "",
       error: null,
-      window: false,
     };
-  },
-  mounted() {
-    console.log(this.$parent.$options.methods);
   },
   validations() {
     return {
       name: { required, minLength: minLength(3) },
-      phone: { required, minLength: minLength(12) },
+      phone: { required, minLength: minLength(18) },
     };
   },
   methods: {
-    openWindow() {
-      this.$emit("openWindow", (this.window = true));
-    },
-    closeWindow() {
-      this.$emit("closeWindow", (this.window = false));
+    restoreOverflow() {
+      document.body.style.overflow = "auto";
     },
     sendForm() {
+      let userName = this.name,
+        userPhone = this.phone;
       this.$store
         .dispatch("sendForm", {
-          name: this.name,
-          phone: this.phone,
+          name: userName,
+          phone: userPhone,
         })
         .then(function (res) {
           console.log(res);
@@ -104,39 +104,16 @@ export default {
 </script>
 
 <style lang="scss">
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-
-  @include media_md {
-    height: 100vh;
-    padding: 0;
-  }
-}
-
-.modal-container {
-  width: 1022px;
-  margin: 0px auto;
-  position: relative;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-
-  @include media_mobile {
+.modal-fields {
+  span {
+    transition: 0.5s;
+    position: absolute;
     width: 100%;
+    text-align: left;
+    left: 4px;
+    bottom: -7.5px;
+    color: brown;
+    font-size: 12px;
   }
 }
 </style>
