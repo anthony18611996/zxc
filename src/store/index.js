@@ -1,8 +1,5 @@
 import { createStore } from "vuex";
 import modules from "./modules";
-import api from "@/instance/api";
-
-const CALLBACK_URL = 'ddd';
 
 export default createStore({
   state: {
@@ -31,23 +28,7 @@ export default createStore({
     ],
   },
   mutations: {},
-  actions: {
-    sendForm(context, payload) {
-      console.log(payload);
-      api
-        .post(`${CALLBACK_URL}`, {
-          ...payload,
-        })
-        .then(function (res) {
-          alert("Заявка отправлена");
-          res;
-        })
-        .catch(function (error) {
-          alert(error);
-        });
-      context;
-    },
-  },
+  actions: {},
   getters: {
     catLength: (state) => {
       return state.categories.length;

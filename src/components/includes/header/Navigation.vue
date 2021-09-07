@@ -82,14 +82,6 @@ export default {
   }
   ul {
     padding-left: 0;
-    li {
-      span {
-        transition: 0.5s;
-        &:hover {
-          color: $blue;
-        }
-      }
-    }
   }
   .header__nav-btn {
     position: absolute;

@@ -7,25 +7,13 @@
         </div>
       </div>
       <div class="row">
-        <div
-          class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
-        >
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <h2>
             We love work hard and explore new things that’s why we cover lot of
             things. Check our service list and view details
           </h2>
         </div>
-        <div
-          class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="1000"
-        >
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <ServicesList />
         </div>
       </div>

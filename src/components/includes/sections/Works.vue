@@ -7,13 +7,7 @@
         </div>
       </div>
       <div class="row align-items-center">
-        <div
-          class="col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12"
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
-        >
+        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12">
           <h2>{{ title }}</h2>
         </div>
         <div
@@ -26,10 +20,6 @@
             offset-md-0
             col-sm-12 col-12
           "
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="1000"
         >
           <swiper
             :slidesPerView="5"

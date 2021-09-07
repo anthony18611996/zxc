@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       navList: [
-        { id: "work", name: "Home" },
-        { id: "services", name: "Services" },
-        { id: "our-work", name: "Our works" },
-        { id: "testimonials", name: "Testimonials" },
+        { path: "dd", name: "Home" },
+        { path: "dd", name: "Services" },
+        { path: "dd", name: "Our works" },
+        { path: "dd", name: "Testimonials" },
       ],
     };
   },

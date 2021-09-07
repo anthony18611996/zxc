@@ -1,7 +1,7 @@
 <template>
   <li>
-    <a :href="`#${link.id}`"
-      ><span>{{ link.name }}</span></a
+    <router-link to="{{ link.path }}"
+      ><span>{{ link.name }}</span></router-link
     >
   </li>
 </template>
@@ -25,7 +25,7 @@ export default {
           span {
             color: $white;
             opacity: $footerOpacity;
-            transition: 0.5s;
+            transition: .5s;
             @include media_mobile {
               font-size: 14px;
             }
