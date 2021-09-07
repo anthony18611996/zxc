@@ -6,7 +6,7 @@
       :key="event.id"
       :event="event"
     ></EventCard>
-  </div>1
+  </div>
 </template>
 
 <script>
