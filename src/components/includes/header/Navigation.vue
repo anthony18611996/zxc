@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     toggleMenu() {
-      let _buttons = document.querySelectorAll(".header .header__nav-btn"),
+      let _buttons = document.querySelectorAll(".header__nav-btn"),
         _menu = document.querySelector(".header__menu"),
         _links = document.querySelectorAll(".header__menu li");
 
@@ -82,14 +82,6 @@ export default {
   }
   ul {
     padding-left: 0;
-    li {
-      span {
-        transition: 0.5s;
-        &:hover {
-          color: $blue;
-        }
-      }
-    }
   }
   .header__nav-btn {
     position: absolute;

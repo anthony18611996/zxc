@@ -1,12 +1,6 @@
 <template>
   <section id="well" class="well">
-    <div
-      class="well__images"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
-      data-aos-duration="1000"
-    >
+    <div class="well__images">
       <div class="image__wrap">
         <img src="@/assets/images/well.jpg" alt="" />
       </div>
@@ -26,9 +20,6 @@
             offset-md-6
             col-sm-12 col-12
           "
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
         >
           <div class="well__content-wrapper">
             <h2>{{ title }}</h2>

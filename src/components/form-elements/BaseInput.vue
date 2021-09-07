@@ -1,7 +1,7 @@
 <template>
   <div>
     <label v-if="label">{{ label }}</label>
-    <input :modelValue="modelValue" @input="updateValue" v-bind="$attrs" />
+    <input :value="value" @input="updateValue" v-bind="$attrs" />
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
       type: String,
       default: "",
     },
-    modelValue: [String, Number],
+    value: [String, Number],
   },
   methods: {
     updateValue(event) {
-      this.$emit("update:modelValue", event.target.value);
+      this.$emit("input", event.target.value);
     },
   },
 };
@@ -37,9 +37,6 @@ input {
     font-size: 18px;
     line-height: 28px;
     color: $subBlack;
-  }
-  &.is-invalid {
-    border-bottom: 1px solid brown;
   }
 }
 </style>

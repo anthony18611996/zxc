@@ -9,13 +9,7 @@
       <swiper :navigation="true" class="mySwiper testimonials__swiper">
         <swiper-slide v-for="item in testimonialsSlides" :key="item.id">
           <div class="row">
-            <div
-              class="col-xl-6 col-lg-6 col-md-6 col-sm-7 col-12"
-              data-aos="fade-left"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1500"
-            >
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-7 col-12">
               <h2>{{ item.title }}</h2>
               <h4>{{ item.author }}</h4>
               <p>{{ item.vacancy }}</p>
@@ -31,9 +25,6 @@
                 offset-md-1 offset-sm-0
                 col-sm-5 col-12
               "
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
             >
               <div class="testimonials__swiper-image">
                 <img :src="require(`@/assets/images/${item.image}`)" alt="" />

@@ -2,25 +2,13 @@
   <section id="digital" class="digital">
     <div class="container">
       <div class="row">
-        <div
-          class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
-        >
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <div class="digital__image">
             <img src="@/assets/images/digital.jpg" alt="" />
           </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-          <div
-            class="digital__content pt-5 pt-md-0"
-            data-aos="fade-up"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="500"
-          >
+          <div class="digital__content pt-5 pt-md-0">
             <h2 class="mb-4">
               {{ author.title }}
             </h2>

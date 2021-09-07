@@ -1,10 +1,5 @@
 <template>
-  <button
-    class="button__default"
-    type="submit"
-    v-on="$listiners"
-    :class="disabled"
-  >
+  <button class="button__default" type="button" v-on="$listiners" :class="disabled">
     <span>{{ text }}</span>
   </button>
 </template>
@@ -14,48 +9,18 @@ export default {
   name: "BaseButton",
   props: {
     text: String,
-    disabled: String,
+    disabled: String
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .button__default {
+  background-color: $blue;
   width: 189px;
   height: 38px;
   text-align: center;
   border: none;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $blue;
-    z-index: -2;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: darken($blue, 35%);
-    transition: all 0.3s;
-    z-index: -1;
-  }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
-    }
-  }
   span {
     font-style: normal;
     font-weight: 500;
